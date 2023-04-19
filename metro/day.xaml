@@ -9,8 +9,18 @@
       Title="day">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="6*"/>
+           
+        </Grid.ColumnDefinitions>
         
-        
-        <ListBox x:Name="list" Grid.Column="1" Grid.Row="2"/>
+        <ListBox x:Name="list" Grid.Column="0" Grid.ColumnSpan="3"  Grid.Row="1"/>
+        <Button x:Name="back" Content="Button" Click="back_Click"/>
+        <TextBlock x:Name="text_block" Text="TextBlock" Grid.Column="1" />
     </Grid>
 </Page>

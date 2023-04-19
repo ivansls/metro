@@ -20,28 +20,23 @@ namespace metro
     /// </summary>
     public partial class days_block : UserControl
     {
-        public static Uri pic1 = new Uri("C:\\Users\\ivan\\Desktop\\шарага\\C#\\metro\\metro\\picture\\tohca.png", UriKind.Relative);
+        public static Uri pic1 = new Uri("C:\\С\\metro\\picture\\tohca.png", UriKind.Relative);
+        int count = 0;
         public days_block()
         {
             InitializeComponent();
             Picture.ImageSource = new BitmapImage(pic1);
+            
         }
 
         private void But_Click(object sender, RoutedEventArgs e)
         {
-            if (Days.Text == "1")
-            {
-                MainWindow main = new MainWindow();
-                main.frame.Content = new day();
-            }
-            else if (Days.Text == "2")
-            {
-                MessageBox.Show("2");
-            }
-            else if (Days.Text == "3")
-            {
-                MessageBox.Show("3");
-            }
+            
+                //MainWindow main = new MainWindow();
+            (Application.Current.MainWindow as MainWindow).frame.Content = new day(Days.Text);
+            
+            
+            
             
         }
     }

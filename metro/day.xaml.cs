@@ -20,11 +20,33 @@ namespace metro
     /// </summary>
     public partial class day : Page
     {
-        public day()
+        check_metro first = new check_metro();
+        public day(string d)
         {
             InitializeComponent();
-            string[] d = new string[] { "1", "2", "3", "4", "5", "6" };
-            list.ItemsSource = d;
+            text_block.Text = d + "-" + mounth.now.ToString("MMMMMMMMMM-yyyy");
+            first.txt.Text = "bus";
+            first.img.Source = new BitmapImage(new Uri("pack://application:,,,/picture/bus.png"));
+
+            check_metro s = new check_metro();
+            s.txt.Text = "electric";
+            s.img.Source = new BitmapImage(new Uri("pack://application:,,,/picture/electric.png"));
+
+            check_metro t = new check_metro();
+            t.txt.Text = "metro";
+            t.img.Source = new BitmapImage(new Uri("pack://application:,,,/picture/metro.png"));
+
+
+            List<check_metro> check_Metros = new List<check_metro>() {first, s, t };
+            list.ItemsSource = check_Metros;
+            
+            
+        }
+
+        private void back_Click(object sender, RoutedEventArgs e)
+        {
+            
+            (Application.Current.MainWindow as MainWindow).frame.Content = new mounth();
         }
     }
 }

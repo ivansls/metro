@@ -55,15 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="check_metro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="day.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="days_block.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="dayxaml.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -75,14 +75,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="check_metro.xaml.cs">
+      <DependentUpon>check_metro.xaml</DependentUpon>
+    </Compile>
     <Compile Include="day.xaml.cs">
       <DependentUpon>day.xaml</DependentUpon>
     </Compile>
     <Compile Include="days_block.xaml.cs">
       <DependentUpon>days_block.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="dayxaml.xaml.cs">
-      <DependentUpon>dayxaml.xaml</DependentUpon>
     </Compile>
     <Compile Include="logicd.cs" />
     <Compile Include="MainWindow.xaml.cs">

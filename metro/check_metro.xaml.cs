@@ -16,12 +16,14 @@ using System.Windows.Shapes;
 namespace metro
 {
     /// <summary>
-    /// Логика взаимодействия для dayxaml.xaml
+    /// Логика взаимодействия для check_metro.xaml
     /// </summary>
-    public partial class dayxaml : Page
+    public partial class check_metro : UserControl
     {
-        public dayxaml()
+        
+        public check_metro()
         {
+            
             InitializeComponent();
         }
     }

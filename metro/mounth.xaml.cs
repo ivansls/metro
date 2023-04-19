@@ -20,22 +20,56 @@ namespace metro
     /// </summary>
     public partial class mounth : Page
     {
+        
+        public static DateTime now = DateTime.Now;
+        int plusDay = 0;
+        public static int a = DateTime.DaysInMonth(now.Year, now.Month);
         logicd lo = new logicd();
         public mounth()
         {
             InitializeComponent();
-            lo.l(this , MainWindow.a);
+            lo.l(this , a);
+            date.Text = now.ToString();
+            txt.Text = now.ToString("yyyy-MMMMMMMMMM");
+            back.Content = "-";
 
         }
 
-        /*public void t()
-        {
-            logicd.l(this);
-        }*/
+       
 
         private void grid_LostTouchCapture(object sender, TouchEventArgs e)
         {
             MessageBox.Show("123");
+        }
+        private void back_Click(object sender, RoutedEventArgs e)
+        {
+
+            now = now.AddMonths(-1);
+            a = DateTime.DaysInMonth(now.Year, now.Month);
+            txt.Text = now.ToString("yyyy-MMMMMMMMMM");
+            date.Text = now.ToString();
+            lo.l(this, a);
+            (Application.Current.MainWindow as MainWindow).frame.Content = new mounth();
+        }
+
+        private void next_Click(object sender, RoutedEventArgs e)
+        {
+            now = now.AddMonths(1);
+            a = DateTime.DaysInMonth(now.Year, now.Month);
+            txt.Text = now.ToString("yyyy-MMMMMMMMMM");
+            date.Text = now.ToString();
+            lo.l(this, a);
+            (Application.Current.MainWindow as MainWindow).frame.Content = new mounth();
+        }
+
+        private void date_CalendarClosed(object sender, RoutedEventArgs e)
+        {
+            now = Convert.ToDateTime(date.Text);
+            a = DateTime.DaysInMonth(now.Year, now.Month);
+            txt.Text = now.ToString("yyyy-MMMMMMMMMM");
+            date.Text = now.ToString();
+            lo.l(this, a);
+            (Application.Current.MainWindow as MainWindow).frame.Content = new mounth();
         }
     }
 }

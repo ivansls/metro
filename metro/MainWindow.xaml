@@ -7,21 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="6*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="6*"/>
-            <ColumnDefinition />
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Button x:Name="back" Content="-" Click="back_Click"  />
-        <Button x:Name="next" Content="+" Grid.Column="3" Click="next_Click" />
-        <DatePicker Name="date" Grid.Column="2" Grid.Row="0" CalendarClosed="date_CalendarClosed"/>
-        <Frame x:Name="frame" Grid.ColumnSpan="4" Grid.Row="1" NavigationUIVisibility="Hidden"/>
-        <TextBlock x:Name="txt" Grid.Column="1"/>
+        
+        <Frame x:Name="frame" NavigationUIVisibility="Hidden"/>
 
     </Grid>
 </Window>
