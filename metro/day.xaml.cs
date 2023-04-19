@@ -21,9 +21,11 @@ namespace metro
     public partial class day : Page
     {
         check_metro first = new check_metro();
+        string dat;
         public day(string d)
         {
             InitializeComponent();
+            dat = d;
             text_block.Text = d + "-" + mounth.now.ToString("MMMMMMMMMM-yyyy");
             first.txt.Text = "bus";
             first.img.Source = new BitmapImage(new Uri("pack://application:,,,/picture/bus.png"));
@@ -45,7 +47,8 @@ namespace metro
 
         private void back_Click(object sender, RoutedEventArgs e)
         {
-            
+            logicd logicd = new logicd();
+            logicd.add_to_json(dat);
             (Application.Current.MainWindow as MainWindow).frame.Content = new mounth();
         }
     }

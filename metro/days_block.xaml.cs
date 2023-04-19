@@ -20,12 +20,11 @@ namespace metro
     /// </summary>
     public partial class days_block : UserControl
     {
-        public static Uri pic1 = new Uri("C:\\С\\metro\\picture\\tohca.png", UriKind.Relative);
         int count = 0;
         public days_block()
         {
             InitializeComponent();
-            Picture.ImageSource = new BitmapImage(pic1);
+            
             
         }
 

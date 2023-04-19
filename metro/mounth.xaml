@@ -24,7 +24,7 @@
         <DatePicker Name="date" Grid.Column="2" Grid.Row="0" CalendarClosed="date_CalendarClosed"/>
         <TextBlock x:Name="txt" Grid.Column="1"/>
         <ScrollViewer Grid.Row="1" Grid.ColumnSpan="4">
-            <WrapPanel x:Name="grid" Grid.ColumnSpan="4" LostTouchCapture="grid_LostTouchCapture">
+            <WrapPanel x:Name="grid" Grid.ColumnSpan="4" >
             </WrapPanel>
         </ScrollViewer>
     </Grid>

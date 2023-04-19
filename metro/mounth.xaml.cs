@@ -37,10 +37,7 @@ namespace metro
 
        
 
-        private void grid_LostTouchCapture(object sender, TouchEventArgs e)
-        {
-            MessageBox.Show("123");
-        }
+        
         private void back_Click(object sender, RoutedEventArgs e)
         {
 
