@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace metro
 {
-    internal class my_type
+    internal class my_type2
     {
-        public bool? isCheck;
-        public string put;
-        public string opis;
+        
+        public DateTime datet;
+        public List<my_type> my_Types;
     }
 }

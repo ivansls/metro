@@ -9,9 +9,11 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace metro
 {
@@ -48,8 +50,16 @@ namespace metro
         private void back_Click(object sender, RoutedEventArgs e)
         {
             logicd logicd = new logicd();
+            foreach (check_metro my1 in list.Items)
+            {
+                my_type my = new my_type();
+                my.isCheck = my1.check.IsChecked;
+                my.put = my1.img.Source.ToString();
+                my.opis = my1.txt.Text.ToString();
+                logicd.list.Add(my);
+            }
             logicd.add_to_json(dat);
-            (Application.Current.MainWindow as MainWindow).frame.Content = new mounth();
+            (System.Windows.Application.Current.MainWindow as MainWindow).frame.Content = new mounth(); ;
         }
     }
 }

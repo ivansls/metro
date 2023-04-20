@@ -31,12 +31,8 @@ namespace metro
         private void check_Checked(object sender, RoutedEventArgs e)
         {
 
-            my_type my = new my_type();
-            my.isCheck = check.IsChecked;
-            my.put = img.Source.ToString();
-            my.opis = txt.Text.ToString();
-            logicd.list.Add(my);
-            /*MessageBox.Show(my.isCheck.ToString() + " " + my.put.ToString() + " " + my.opis.ToString());*/
+            
+            
 
         }
     }

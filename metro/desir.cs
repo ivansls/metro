@@ -10,9 +10,9 @@ namespace metro
 {
     internal class desir
     {
-        public static string desktop = Environment.GetFolderPath((Environment.SpecialFolder.Desktop));
         public static void MySerialeze<T>(T pers)
         {
+            string desktop = Environment.GetFolderPath((Environment.SpecialFolder.Desktop));
 
             string json = JsonConvert.SerializeObject(pers);
             File.WriteAllText(desktop + "\\manager.json", json);
@@ -20,7 +20,7 @@ namespace metro
 
         public static T MyDesirialize<T>()
         {
-
+            string desktop = Environment.GetFolderPath((Environment.SpecialFolder.Desktop));
 
             string json = File.ReadAllText(desktop + "\\manager.json");
             T type = JsonConvert.DeserializeObject<T>(json);

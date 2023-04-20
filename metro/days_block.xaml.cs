@@ -8,6 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
@@ -24,8 +25,41 @@ namespace metro
         public days_block()
         {
             InitializeComponent();
+            /*try
+            {
+
+                if (logicd.list[0].opis == "bus")
+                {
+                    if ((i + 1).ToString() == data)
+                    {
+                        Picture.ImageSource = new BitmapImage(new Uri("pack://application:,,,/picture/bus.png"));
+                    }
+                }
+                else if (logicd.list[0].opis == "electric")
+                {
+                    if ((i + 1).ToString() == data)
+                    {
+                        Picture.ImageSource = new BitmapImage(new Uri("pack://application:,,,/picture/electric.png"));
+                    }
+                }
+                else if (logicd.list[0].opis == "metro")
+                {
+                    if ((i + 1).ToString() == data)
+                    {
+                        Picture.ImageSource = new BitmapImage(new Uri("pack://application:,,,/picture/metro.png"));
+                    }
+                }
+
+
+
+            }
+            catch (Exception e)
+            {
+                f.Picture.ImageSource = new BitmapImage(new Uri("pack://application:,,,/picture/tohca.png"));
+            }*/
+
             
-            
+
         }
 
         private void But_Click(object sender, RoutedEventArgs e)
