@@ -56,6 +56,8 @@ namespace metro
             txt.Text = now.ToString("yyyy-MMMMMMMMMM");
             date.Text = now.ToString();
             lo.l(this, a);
+            days_block f = new days_block();
+            lo.main(f);
             (Application.Current.MainWindow as MainWindow).frame.Content = new mounth();
         }
 

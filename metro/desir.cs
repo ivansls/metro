@@ -15,14 +15,14 @@ namespace metro
             string desktop = Environment.GetFolderPath((Environment.SpecialFolder.Desktop));
 
             string json = JsonConvert.SerializeObject(pers);
-            File.WriteAllText(desktop + "\\manager.json", json);
+            File.WriteAllText("\\\\Mac\\Home\\Desktop\\manager.json", json);
         }
 
         public static T MyDesirialize<T>()
         {
             string desktop = Environment.GetFolderPath((Environment.SpecialFolder.Desktop));
 
-            string json = File.ReadAllText(desktop + "\\manager.json");
+            string json = File.ReadAllText("\\\\Mac\\Home\\Desktop\\manager.json");
             T type = JsonConvert.DeserializeObject<T>(json);
             return type;
         }

@@ -22,18 +22,17 @@ namespace metro
     {
         public static int c;
         public List<check_metro> check_Metros = new List<check_metro>();
+        List<my_type2> type = desir.MyDesirialize<List<my_type2>>();
         public check_metro()
         {
-            
-            InitializeComponent();
-        }
 
+            InitializeComponent();
+            
+        }
         private void check_Checked(object sender, RoutedEventArgs e)
         {
-
-            
-            
 
         }
     }
 }
+

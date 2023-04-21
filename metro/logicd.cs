@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -26,32 +27,9 @@ namespace metro
                
                 f.Days.Text = i.ToString();
                 m.grid.Children.Add(f);
-                try
-                {
-                    foreach (my_type2 type2 in type)
-                    {
-                        if (type2.datet.Day.ToString() == f.Days.Text)
-                        {
-                            if (type2.my_Types[0].isCheck == true)
-                            {
-                                f.Picture.ImageSource = new BitmapImage(new Uri(type2.my_Types[0].put.ToString()));
-                            }
-                            else if (type2.my_Types[1].isCheck == true)
-                            {
-                                f.Picture.ImageSource = new BitmapImage(new Uri(type2.my_Types[1].put.ToString()));
-                            }
-                            else if (type2.my_Types[2].isCheck == true)
-                            {
-                                f.Picture.ImageSource = new BitmapImage(new Uri(type2.my_Types[2].put.ToString()));
-                            }
-                        }
-                        else
-                        {
-                            f.Picture.ImageSource = new BitmapImage(new Uri("pack://application:,,,/picture/tohca.png"));
-                        }
-                    }
-                }
-                catch (Exception ex) { Console.WriteLine(1); }
+                f.Picture.ImageSource = new BitmapImage(new Uri("pack://application:,,,/picture/tohca.png"));
+                main(f);
+                
 
 
             }
@@ -62,13 +40,106 @@ namespace metro
 
         public void add_to_json(string dat)
         {
-           
-            MessageBox.Show(d.ToString());
-            my_type2 my_Type = new my_type2();
-            my_Type.datet = d;
-            my_Type.my_Types = list;
-            type.Add(my_Type);
-            desir.MySerialeze(type);
+
+            /*if (type == )
+            {
+                type = new List<my_type2> { };
+                MessageBox.Show(d.ToString());
+                my_type2 my_Type = new my_type2();
+                my_Type.datet = new DateTime(d.Year, d.Month, Convert.ToInt32(dat));
+                my_Type.my_Types = list;
+                type.Add(my_Type);
+                desir.MySerialeze(type);
+            }
+            else
+            {*/
+
+            /*if (type.Contains())*/
+
+
+            /*if (type.Contains(my_Type))
+            {
+                MessageBox.Show(type.IndexOf(my_Type).ToString());
+                type.RemoveAt(type.IndexOf(my_Type));
+                type.Add(my_Type);
+            }
+            else
+            {
+                type.Add(my_Type);
+            }
+            desir.MySerialeze(type);*/
+            if (type.Count == 0)
+            {
+                my_type2 my_Type = new my_type2();
+                my_Type.datet = new DateTime(d.Year, d.Month, Convert.ToInt32(dat));
+                my_Type.my_Types = list;
+                type.Add(my_Type);
+                desir.MySerialeze(type);
+            }
+            else
+            {
+                try
+                {
+                    foreach (my_type2 t in type)
+                    {
+                        if (t.datet.Day.ToString() == dat)
+                        {
+                            type.RemoveAt(type.IndexOf(t));
+                            my_type2 my_Type = new my_type2();
+                            my_Type.datet = new DateTime(t.datet.Year, t.datet.Month, Convert.ToInt32(dat));
+                            my_Type.my_Types = list;
+                            type.Add(my_Type);
+                            desir.MySerialeze(type);
+                        }
+                        else
+                        {
+                            my_type2 my_Type = new my_type2();
+                            my_Type.datet = new DateTime(d.Year, d.Month, Convert.ToInt32(dat));
+                            my_Type.my_Types = list;
+                            type.Add(my_Type);
+                            desir.MySerialeze(type);
+                        }
+                    }
+                }
+                catch { MessageBox.Show("DONE"); }
+            }
+        }
+
+        public void main(days_block f)
+        {
+
+            foreach (my_type2 t in type)
+            {
+                if (t.datet.Month.ToString() == mounth.now.Month.ToString())
+                {
+                    MessageBox.Show("12");
+                    if (t.datet.Day.ToString() == f.Days.Text)
+                    {
+                        if (t.my_Types[0].isCheck == true)
+                        {
+                            f.Picture.ImageSource = new BitmapImage(new Uri(t.my_Types[0].put.ToString()));
+                            break;
+                        }
+                        else if (t.my_Types[1].isCheck == true)
+                        {
+                            f.Picture.ImageSource = new BitmapImage(new Uri(t.my_Types[1].put.ToString()));
+                            break;
+                        }
+                        else if (t.my_Types[2].isCheck == true)
+                        {
+                            f.Picture.ImageSource = new BitmapImage(new Uri(t.my_Types[2].put.ToString()));
+                            break;
+                        }
+                        /*MessageBox.Show(t.datet.Day.ToString() + " " + f.Days.Text);*/
+                    }
+                }
+
+                else
+                {
+                    break;
+                }
+
+            }
         }
 
 
